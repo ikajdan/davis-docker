@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  davis:
+    container_name: davis
+    image: davis
+    restart: unless-stopped
+    env_file:
+      - davis.env
+    ports:
+      - 8080:8080
+    volumes:
+      - data:/data
+
+volumes:
+  data:
